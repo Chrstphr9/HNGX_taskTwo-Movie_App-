@@ -12,7 +12,7 @@ function App() {
       .then((res) => res.json())
       .then(data => {
         console.log(data);
-        setMovies(data.result.slice(0, 12))
+        setMovies(data.results.slice(0, 12))
       })
   }, [])
 
