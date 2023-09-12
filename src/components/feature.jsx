@@ -1,6 +1,5 @@
-
 import PropTypes from 'prop-types'; 
-import right from "../assets/right.png"
+import right from "../assets/icon.png"
 
 const API_IMG = 'https://image.tmdb.org/t/p/w500/';
 

@@ -1,10 +1,10 @@
 import tv from "../assets/tv.png"
 import Menu from "../assets/Menu.png"
-import search from "../assets/search.png";
+import search1 from "../assets/search1.png";
 import { useState } from "react";
 import PropTypes from 'prop-types';
 
-const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=ea276d358d5386e1de3f4615ae10ec26&query";
+const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=146776457697eb1d2f870174b4db5ee8&query";
 
 const Navbar = ({ setMovies }) => {
     const [query, setQuery] = useState("");
@@ -13,7 +13,7 @@ const Navbar = ({ setMovies }) => {
         e.preventDefault();
         console.log("searching");
         try {
-            const url = `https://api.themoviedb.org/3/search/movie?api_key=ea276d358d5386e1de3f4615ae10ec26&query=${query}`;
+            const url = `https://api.themoviedb.org/3/search/movie?api_key=146776457697eb1d2f870174b4db5ee8&query=${query}`;
             const res = await fetch(url);
             const data = await res.json();
             console.log(data)
@@ -50,7 +50,7 @@ const Navbar = ({ setMovies }) => {
                             className="w-full px-3 py-1 rounded-md bg-transparent border text-white focus:outline-none focus:bg-transparent focus:ring-1 focus:ring-white pr-8 placeholder-white"
                         />
                         <div className="absolute inset-y-0 right-0 flex items-center pr-3 ">
-                            <img src={search} alt="Search Icon" className="h-5 w-5 bg-transparent" style={{ fill: 'white' }} />
+                            <img src={search1} alt="Search Icon" className="h-5 w-5 bg-transparent" style={{ fill: 'white' }} />
                         </div>
                     </form>
 
