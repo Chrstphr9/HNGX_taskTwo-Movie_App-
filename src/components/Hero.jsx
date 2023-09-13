@@ -4,11 +4,12 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import imdb from "../assets/imdb.png"
 import Navbar from './Navbar';
+import Featured from './feature';
 const API_IMG = "https://image.tmdb.org/t/p/w500/"
 const CAROUSEL_DELAY = 3000;
 
 
-const Hero = ({ title, poster_path, overview, firstFiveMovies, setMovies}) => {
+const Hero = ({ firstFiveMovies, setMovies, movies }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     
@@ -65,6 +66,7 @@ const Hero = ({ title, poster_path, overview, firstFiveMovies, setMovies}) => {
           ))}
         </Carousel>
       </div>
+      <Featured movies={movies} setMovies={setMovies} />
     </div>
 
   );
@@ -72,6 +74,15 @@ const Hero = ({ title, poster_path, overview, firstFiveMovies, setMovies}) => {
 
 Hero.propTypes = {
     firstFiveMovies: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        poster_path: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        overview: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+
+    movies: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
         poster_path: PropTypes.string.isRequired,
